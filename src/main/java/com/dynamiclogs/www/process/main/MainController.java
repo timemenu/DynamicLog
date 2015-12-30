@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 	
-	@RequestMapping("/main")
+	@RequestMapping("/")
 	public String main(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
 		return "main";
