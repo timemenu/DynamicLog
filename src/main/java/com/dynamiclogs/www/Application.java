@@ -9,6 +9,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * 
+ * 스프링 부트 실행관련 클래스파일입니다.
+ *
+ * com.dynamiclogs.www
+ * Application.java
+ *
+ * @author : quickmenu
+ * @date : 2015. 12. 30.
+ * @version : 1.0
+ *
+ */
 @SpringBootApplication
 public class Application {
 
