@@ -40,8 +40,7 @@
 					<li class="active"><a href="#">연구노트</a></li>
 					<li><a href="#about">연구일정</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">이연수
-							<span class="caret"></span>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">이연수<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">로그아웃</a></li>
@@ -54,7 +53,7 @@
 	</nav>
 
 	<!-- Begin page content -->
-	<div class="jumbotron">
+	<div class="jumbotron wrapper">
 		<div class="container">
 			<h1>Hello, <small>다이나믹로그</small></h1>
 			<p>다이나믹로그는 로그기반의 시스템 프로비저닝을 연구하는 개발 사이트입니다.</p>
@@ -65,14 +64,14 @@
 	<div class="container" th:if="${not #lists.isEmpty(studys)}">
 		<div class="row">
 			<div class="col-sm-6 col-md-4" th:each="study : ${studys}">
-				<div class="thumbnail">
-					<img src="..." alt="..." />
+				<div class="thumbnail" th:switch="${study.ccSeq}">
+					<img src="..." alt="..." th:case="0"/>
 					<div class="caption">
 						<h3 th:text="${study.title}">제목</h3>
 						<p th:text="${study.content}">내용</p>
 						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a>
-							<a href="#" class="btn btn-default" role="button">Button</a>
+							<a href="#" class="btn btn-primary" role="button">자세히</a>
+							<a href="#" class="btn btn-default" role="button">연구일정</a>
 						</p>
 					</div>
 				</div>
@@ -82,7 +81,7 @@
 
 	<footer class="footer">
 		<div class="container">
-			<p class="text-muted">CopyRight<span class="glyphicon glyphicon-copyright-mark"></span> 2015 All rights reserved by 이연수.</p>
+			<p class="text-muted">CopyRight <span class="glyphicon glyphicon-copyright-mark"></span> 2016 All rights reserved by 이연수.</p>
 		</div>
 	</footer>
 

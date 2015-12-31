@@ -19,11 +19,7 @@ public class MainController {
 	
 	@RequestMapping("/")
 	public String main(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-		
-		List<StudyBoard> studys = (List<StudyBoard>) studyBoardRepository.findAll();
-		for(StudyBoard sb : studys) {
-			System.out.println(sb.getContent());
-		}
+		List<StudyBoard> studys = (List<StudyBoard>) studyBoardRepository.findTop3ByOrderByRegDateAsc();
 				
 		model.addAttribute("studys", studys);
 		return "main";
