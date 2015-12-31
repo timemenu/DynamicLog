@@ -8,6 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 
+ * 연구게시판 도메인 클래스입니다.
+ *
+ * com.dynamiclogs.www.process.domain
+ * StudyBoard.java
+ *
+ * @author : quickmenu
+ * @date : 2016. 1. 1.
+ * @version : 1.0
+ *
+ */
 @Entity
 public class StudyBoard {
 	

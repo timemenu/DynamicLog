@@ -6,6 +6,18 @@ import org.springframework.data.repository.Repository;
 
 import com.dynamiclogs.www.process.domain.StudyBoard;
 
+/**
+ * 
+ * 연구게시판 레파지토리 클래스입니다.
+ *
+ * com.dynamiclogs.www.process.repository
+ * StudyBoardRepository.java
+ *
+ * @author : quickmenu
+ * @date : 2016. 1. 1.
+ * @version : 1.0
+ *
+ */
 public interface StudyBoardRepository extends Repository<StudyBoard, Integer> {
 	
 	// 처음으로 생성한 jpa 쿼리 메소드
