@@ -20,12 +20,12 @@ public class MainController {
 	@RequestMapping("/")
 	public String main(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
 		
-		List<StudyBoard> result = (List<StudyBoard>) studyBoardRepository.findAll();
-		for(StudyBoard sb : result) {
+		List<StudyBoard> studys = (List<StudyBoard>) studyBoardRepository.findAll();
+		for(StudyBoard sb : studys) {
 			System.out.println(sb.getContent());
 		}
 				
-		model.addAttribute("name", name);
+		model.addAttribute("studys", studys);
 		return "main";
 	}
 }

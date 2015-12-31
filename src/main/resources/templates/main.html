@@ -54,23 +54,30 @@
 	</nav>
 
 	<!-- Begin page content -->
-	<div class="container">
-		<div class="page-header">
-			<h1>Sticky footer with fixed navbar</h1>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Hello, <small>다이나믹로그</small></h1>
+			<p>다이나믹로그는 로그기반의 시스템 프로비저닝을 연구하는 개발 사이트입니다.</p>
+			<p>이론, 실무 내용을 공유하고 프로젝트 진행 결과를 확인할 수 있습니다.</p>
 		</div>
-		<p class="lead">
-			Pin a fixed-height footer to the bottom of the viewport in desktop
-			browsers with this custom HTML and CSS. A fixed navbar has been added
-			with
-			<code>padding-top: 60px;</code>
-			on the
-			<code>body > .container</code>
-			.
-		</p>
-		<p>
-			Back to <a href="../sticky-footer">the default sticky footer</a>
-			minus the navbar.
-		</p>
+	</div>
+		
+	<div class="container" th:if="${not #lists.isEmpty(studys)}">
+		<div class="row">
+			<div class="col-sm-6 col-md-4" th:each="study : ${studys}">
+				<div class="thumbnail">
+					<img src="..." alt="..." />
+					<div class="caption">
+						<h3 th:text="${study.title}">제목</h3>
+						<p th:text="${study.content}">내용</p>
+						<p>
+							<a href="#" class="btn btn-primary" role="button">Button</a>
+							<a href="#" class="btn btn-default" role="button">Button</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<footer class="footer">
