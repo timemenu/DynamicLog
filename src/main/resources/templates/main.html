@@ -8,10 +8,11 @@
 <title>다이나믹로그</title>
 
 <!-- 부트스트랩 -->
-<link rel="stylesheet"
-	href="/statics/bootstrap/3.3.2/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="/statics/common/0.0.1/css/common.css" />
+<link rel="stylesheet" href="/statics/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/statics/common/0.0.1/css/common.css" />
+	
+<!-- 캘린더 -->
+<link rel="stylesheet" href="/statics/common/0.0.1/css/dl-calendar.css" />
 
 <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
 <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
@@ -51,16 +52,7 @@
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-
-	<!-- Begin page content -->
-	<div class="jumbotron wrapper">
-		<div class="container">
-			<h1>Hello, <small>다이나믹로그</small></h1>
-			<p>다이나믹로그는 로그기반의 시스템 프로비저닝을 연구하는 개발 사이트입니다.</p>
-			<p>이론, 실무 내용을 공유하고 프로젝트 진행 결과를 확인할 수 있습니다.</p>
-		</div>
-	</div>
-		
+			
 	<div class="container" th:if="${not #lists.isEmpty(studys)}">
 		<div class="row">
 			<div class="col-sm-6 col-md-4" th:each="study : ${studys}">
@@ -77,6 +69,27 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="btn-holder">
+							<button id="btnPrev" type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							</button>
+							<span id="currentDate" class="label label-primary"></span>
+							<button id="btnNext" type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							</button>
+						</div>
+					</div>
+					<div class="panel-body custom-panel-body">
+						<div id="calendar" class="table-responsive custom-table-responsive"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<footer class="footer">
@@ -86,9 +99,11 @@
 	</footer>
 
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 	<script src="/statics/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+	<!-- 캘린더 -->
+	<script src="/statics/common/0.0.1/js/dl-calendar.js" ></script>
 </body>
 </html>
