@@ -31,7 +31,7 @@ body:after {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 30px;
   background-color: #f5f5f5;
 }
 
@@ -46,25 +46,36 @@ body > .container {
   z-index:1;
 }
 
+/* 기타 커스텀 */
+.custom-navbar-brand {
+	padding: 10px 10px;
+}
 .custom-panel-body {
     padding: 0px;
 }
-
 .custom-table {
 	margin-bottom: 0px;
 }
-
 .custom-table-responsive {
 	margin-bottom: 0px;
 }
 
-.container .text-muted {
-  margin: 20px 0;
-}
-
+/* 푸터 커스텀 */
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+}
+.footer > .container > .text-muted {
+	margin: 5px 0;
+	text-align: center;
+}
+
+/* 네비게이션 토글버튼 커스텀 */
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: transparent;
 }
 
 code {
