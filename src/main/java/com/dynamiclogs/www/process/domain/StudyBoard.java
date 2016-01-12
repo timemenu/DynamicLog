@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * 
@@ -21,10 +22,12 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@Table(name="STUDY_BOARD")
 public class StudyBoard {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="sb_seq")
 	private Integer sbSeq;
 	
 	@Column(name = "cc_seq", nullable = false)
