@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,7 +8,7 @@
 <title>다이나믹로그</title>
 
 <!-- 부트스트랩 -->
-<link rel="stylesheet" href="/statics/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/statics/common/0.0.1/css/common.css" />
 	
 <!-- 캘린더 -->
@@ -55,15 +55,14 @@
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-			
-	<div class="container" th:if="${not #lists.isEmpty(studys)}">
+
+	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-md-4" th:each="study : ${studys}">
-				<div class="thumbnail" th:switch="${study.ccSeq}">
-					<img src="..." alt="..." th:case="0"/>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
 					<div class="caption">
-						<h3 th:text="${study.title}">제목</h3>
-						<p th:text="${study.content}">내용</p>
+						<h3>제목</h3>
+						<p>내용</p>
 						<p>
 							<a href="#" class="btn btn-primary" role="button">자세히</a>
 							<a href="#" class="btn btn-default" role="button">연구일정</a>
@@ -73,28 +72,6 @@
 			</div>
 		</div>
 		
-		
-		<!-- 테스트 
-		<div class="row">
-			<div class="col-sm-12 col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="btn-holder">
-							<button id="btnPrev" type="button" class="btn btn-default btn-xs" aria-label="Left Align">
-								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-							</button>
-							<span id="currentDate" class="label label-primary"></span>
-							<button id="btnNext" type="button" class="btn btn-default btn-xs" aria-label="Left Align">
-								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
-					<div class="panel-body custom-panel-body">
-						<div id="calendar" class="table-responsive custom-table-responsive"></div>
-					</div>
-				</div>
-			</div>
-		</div> -->
 	</div>
 
 	<footer class="footer">
@@ -103,11 +80,9 @@
 		</div>
 	</footer>
 
-	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-	<script src="/statics/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	
+	<!-- 부트스트랩 -->
+	<script src="/webjars/jquery/1.11.3/dist/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/3.3.6/dist/js/bootstrap.min.js"></script>
 	<!-- 캘린더 -->
 	<script src="/statics/common/0.0.1/js/dl-calendar.js" ></script>
 </body>

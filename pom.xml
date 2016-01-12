@@ -33,15 +33,19 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
+		
 		<!-- 타임리프 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- 스프링 시큐리티 <dependency> <groupId>org.springframework.boot</groupId> 
-			<artifactId>spring-boot-starter-security</artifactId> </dependency> -->
+		<!-- 스프링 시큐리티 
+		<dependency> 
+			<groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-security</artifactId> 
+		</dependency> 
+		-->
 
 		<!-- 스프링 데이터(jpa) -->
 		<dependency>
@@ -73,6 +77,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- BootStrap -->
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+
+		<!-- jQuery -->
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
