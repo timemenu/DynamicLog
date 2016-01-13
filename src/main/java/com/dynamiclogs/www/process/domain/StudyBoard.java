@@ -30,25 +30,29 @@ public class StudyBoard {
 	@Column(name="sb_seq")
 	private Integer sbSeq;
 	
-	@Column(name = "cc_seq", nullable = false)
+	//@Column(name = "cc_seq", nullable = false)
+	@Column(name = "cc_seq")
 	private Integer ccSeq;
 	
-	@Column(name = "title", nullable = false)
+	@Column(name = "title")
 	private String title;
 	
-	@Column(name = "content", nullable = false)
+	@Column(name = "content")
 	private String content;
 	
-	@Column(name = "start_date", nullable = false)
+	//@Column(name = "start_date", nullable = false)
+	@Column(name = "start_date")
 	private Date startDate;
 	
-	@Column(name = "finish_date", nullable = false)
+	//@Column(name = "finish_date", nullable = false)
+	@Column(name = "finish_date")
 	private Date finishDate;
 	
 	@Column(name = "reg_seq")
 	private Integer	regSeq;
 	
-	@Column(name = "reg_date", nullable = false)
+	//@Column(name = "reg_date", nullable = false)
+	@Column(name = "reg_date")
 	private Date regDate;
 	
 	@Column(name = "upd_seq")
@@ -136,4 +140,18 @@ public class StudyBoard {
 	public void setUpdDate(Date updDate) {
 		this.updDate = updDate;
 	}
+
+	@Override
+	public String toString() {
+		return "StudyBoard [" + (sbSeq != null ? "sbSeq=" + sbSeq + ", " : "")
+				+ (ccSeq != null ? "ccSeq=" + ccSeq + ", " : "") + (title != null ? "title=" + title + ", " : "")
+				+ (content != null ? "content=" + content + ", " : "")
+				+ (startDate != null ? "startDate=" + startDate + ", " : "")
+				+ (finishDate != null ? "finishDate=" + finishDate + ", " : "")
+				+ (regSeq != null ? "regSeq=" + regSeq + ", " : "")
+				+ (regDate != null ? "regDate=" + regDate + ", " : "")
+				+ (updSeq != null ? "updSeq=" + updSeq + ", " : "") + (updDate != null ? "updDate=" + updDate : "")
+				+ "]";
+	}
+	
 }

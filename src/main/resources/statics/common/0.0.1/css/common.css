@@ -59,6 +59,9 @@ body > .container {
 .custom-table-responsive {
 	margin-bottom: 0px;
 }
+.custom-btn {
+	margin-bottom: 5px;
+}
 
 /* 푸터 커스텀 */
 .footer > .container {
