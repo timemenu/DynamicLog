@@ -23,4 +23,4 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EntityScan(basePackages = {"com.dynamiclogs.www.process"})
 @EnableJpaRepositories(basePackages = {"com.dynamiclogs.www.process"})
 @EnableTransactionManagement
-public class RepositoryConfiguration { }
+public class RepoConfig { }

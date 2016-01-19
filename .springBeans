@@ -7,6 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
+		<config>java:com.dynamiclogs.www.config.RepoConfig</config>
 	</configs>
 	<autoconfigs>
 		<config>java:com.dynamiclogs.www.Application</config>

@@ -14,7 +14,8 @@ import com.dynamiclogs.www.process.repository.StudyBoardRepository;
 @RequestMapping(value="/study")
 public class StudyBoardController {
 	
-	@Autowired private StudyBoardRepository studyBoardRepository;
+	@Autowired 
+	private StudyBoardRepository studyBoardRepository;
 	
 	@RequestMapping(headers="Content-Type=application/json", value="/save", method=RequestMethod.POST)
 	public @ResponseBody StudyBoard saveStudyContent(@RequestBody StudyBoard studyBoard) {
