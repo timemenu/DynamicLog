@@ -21,6 +21,6 @@ import com.dynamiclogs.www.process.domain.StudyBoard;
 public interface StudyBoardRepository extends JpaRepository<StudyBoard, Integer> {
 	
 	// 처음으로 생성한 jpa 쿼리 메소드
-	List<StudyBoard> findTop3ByOrderByRegDateAsc();
+	List<StudyBoard> findAllByOrderByRegDateAsc();
 	
 }

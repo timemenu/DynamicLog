@@ -30,8 +30,8 @@ public class MainController {
 	
 	@RequestMapping("/")
 	public String main(Model model) {
-		List<StudyBoard> studys = (List<StudyBoard>) studyBoardRepository.findTop3ByOrderByRegDateAsc();
+		List<StudyBoard> studys = (List<StudyBoard>) studyBoardRepository.findAllByOrderByRegDateAsc();
 		model.addAttribute("studys", studys);
-		return "main";
+		return "contents/main";
 	}
 }
