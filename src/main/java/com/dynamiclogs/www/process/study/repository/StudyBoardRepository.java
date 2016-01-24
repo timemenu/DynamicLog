@@ -1,10 +1,10 @@
-package com.dynamiclogs.www.process.repository;
+package com.dynamiclogs.www.process.study.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.dynamiclogs.www.process.domain.StudyBoard;
+import com.dynamiclogs.www.process.study.domain.StudyBoard;
 
 /**
  * 

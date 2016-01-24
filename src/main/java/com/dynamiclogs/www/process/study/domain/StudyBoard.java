@@ -1,4 +1,4 @@
-package com.dynamiclogs.www.process.domain;
+package com.dynamiclogs.www.process.study.domain;
 
 import java.util.Date;
 
