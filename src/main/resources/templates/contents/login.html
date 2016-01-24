@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>다이나믹로그 | Login Page</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- head 선언 인크루드 -->
+<head th:include="layout/sethead">
 </head>
 <body>
-로그인합시다.
+
+	<div class="container">
+		<form class="form-signin" action="/login/process" method="post">
+			<h3 class="form-signin-heading" style="color:white">
+			<img alt="Brand" height="50" src="/statics/images/logs/symbol01.png" style="display:inline;"/> DYNAMICLOG
+			<small style="color:#f2f2f2">sign in</small>
+			</h3>
+			<label for="inputEmail" class="sr-only">Email address</label> 
+			<input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address"/> 
+			<label for="inputPassword" class="sr-only">Password</label> 
+			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"/>
+			<div class="checkbox">
+				<label style="color:white"> 
+					<input type="checkbox" value="remember-me" />
+					Remember me
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		</form>
+	</div>
+	<!-- /container -->
+	
+	<!-- js설정 인크루드 -->
+	<div th:include="layout/setfoot" th:remove="tag"></div>
+	
 </body>
 </html>

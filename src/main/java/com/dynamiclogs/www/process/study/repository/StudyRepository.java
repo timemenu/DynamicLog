@@ -1,10 +1,10 @@
-package com.dynamiclogs.www.process.repository;
+package com.dynamiclogs.www.process.study.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.dynamiclogs.www.process.domain.StudyBoard;
+import com.dynamiclogs.www.process.study.domain.Study;
 
 /**
  * 
@@ -18,9 +18,9 @@ import com.dynamiclogs.www.process.domain.StudyBoard;
  * @version : 1.0
  *
  */
-public interface StudyBoardRepository extends JpaRepository<StudyBoard, Integer> {
+public interface StudyRepository extends JpaRepository<Study, Integer> {
 	
 	// 처음으로 생성한 jpa 쿼리 메소드
-	List<StudyBoard> findAllByOrderByRegDateAsc();
+	List<Study> findAllByOrderByRegDateAsc();
 	
 }

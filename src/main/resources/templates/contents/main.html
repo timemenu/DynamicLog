@@ -9,62 +9,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-md-4">
-				<!-- <a class="btn btn-default pull-right" href="#" role="button">
-					<span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
-				</a> -->
-				<a class="btn btn-default custom-btn" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-					연구등록 <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
-				</a>
-				<div class="collapse" id="collapseExample">
-					<div class="well">
-						<form id="study_form">
-						<div class="form-group form-group-sm">
-							<div class="row">
-								<div class="col-sm-12">
-									<input name="title" class="form-control" type="text" id="formGroupInputSmall" placeholder="제목" />
-								</div>
-							</div>
-							<br/>
-							<div class="row">
-								<div class="col-sm-12">
-									<textarea name="content" class="form-control" rows="10" placeholder="내용"></textarea>
-								</div>
-							</div>
-							<br/>
-							<div class="row">
-								<div class="col-sm-12">
-									<a id="study_submit" class="btn btn-default pull-right" href="#" role="button">등록하기</a>
-								</div>
-							</div>
-						</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<form action="/connect/facebook" method="POST">
-					<input type="hidden" name="scope" value="email,publish_actions" />
-					<div class="formInfo">
-						<p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>
-					</div>
-					<p><button type="submit">Connect to Facebook</button></p>
-				</form>
-			</div>
-		</div>
-		<div class="row note">
-			<div class="col-sm-6 col-md-4" th:each="study : ${studys}">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3 th:text="${study.title}">제목</h3>
-						<p th:text="${study.content}">내용</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">자세히</a>
-							<a href="#" class="btn btn-default" role="button">연구일정</a>
-						</p>
-					</div>
-				</div>
-			</div>
+			메인페이지
 		</div>
 	</div>
 

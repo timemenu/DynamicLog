@@ -1,4 +1,4 @@
-package com.dynamiclogs.www.process.domain;
+package com.dynamiclogs.www.process.study.domain;
 
 import java.util.Date;
 
@@ -22,8 +22,8 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="STUDY_BOARD")
-public class StudyBoard {
+@Table(name="STUDY")
+public class Study {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -143,15 +143,7 @@ public class StudyBoard {
 
 	@Override
 	public String toString() {
-		return "StudyBoard [" + (sbSeq != null ? "sbSeq=" + sbSeq + ", " : "")
-				+ (ccSeq != null ? "ccSeq=" + ccSeq + ", " : "") + (title != null ? "title=" + title + ", " : "")
-				+ (content != null ? "content=" + content + ", " : "")
-				+ (startDate != null ? "startDate=" + startDate + ", " : "")
-				+ (finishDate != null ? "finishDate=" + finishDate + ", " : "")
-				+ (regSeq != null ? "regSeq=" + regSeq + ", " : "")
-				+ (regDate != null ? "regDate=" + regDate + ", " : "")
-				+ (updSeq != null ? "updSeq=" + updSeq + ", " : "") + (updDate != null ? "updDate=" + updDate : "")
-				+ "]";
+		return "Study [" + (super.toString() != null ? "toString()=" + super.toString() : "") + "]";
 	}
-	
+
 }
