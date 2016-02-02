@@ -20,7 +20,7 @@ public class StudyController {
 	@Autowired 
 	private StudyRepository studyRepository;
 	
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String study(Model model) {
 		List<Study> studys = (List<Study>) studyRepository.findAllByOrderByRegDateAsc();
 		model.addAttribute("studys", studys);

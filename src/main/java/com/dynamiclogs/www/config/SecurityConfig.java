@@ -9,13 +9,20 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.social.security.SocialUserDetailsService;
+
+import com.dynamiclogs.www.config.social.SocialUsersDetailService;
 
 /**
  * 
  * 시큐리티 설정 클래스입니다.
- *
+ * (TODO 작성필요)
+ * https://github.com/brant-hwang/spring-boot-social-example/blob/master/src/main/java/com/axisj/examples/spring/social/SecurityConfig.java
+ * https://github.com/callistaenterprise/blog-social-login-with-spring-social
+ * 
  * com.dynamiclogs.www.config SecurityConfig.java
  *
  * @author : quickmenu
@@ -28,6 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private DataSource dataSource;
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -42,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authoritiesByUsernameQuery(getAuthoritiesQuery());
 	}
 
-	// 1. 유저네임 쿼리
+	// 1. 유저관련 쿼리
 	private String getUserQuery() {
 		return "SELECT email AS username, password, TRUE AS enabled "
 				+ "FROM USER " 
@@ -67,7 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().csrf().disable().anonymous()
 			.and()
 				.authorizeRequests()
-				.antMatchers("/statics/**", "/signup", "/console/**")
+				.antMatchers("/**", "/statics/**", "/signup", "/console/**")
 				.permitAll().anyRequest().authenticated()
 			.and()
 				.formLogin()
@@ -82,4 +92,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.invalidateHttpSession(true)
 				.deleteCookies("JSESSIONID");
 	}
+	
+	@Bean
+	public SocialUserDetailsService socialUsersDetailService() {
+		return new SocialUsersDetailService(userDetailsService);
+	}
+
+	@Override
+	protected UserDetailsService userDetailsService() {
+		return userDetailsService;
+	}
+	
+	
 }
