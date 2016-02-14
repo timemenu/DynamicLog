@@ -9,12 +9,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.social.security.SocialUserDetailsService;
-
-import com.dynamiclogs.www.config.social.SocialUsersDetailService;
 
 /**
  * 
@@ -35,9 +31,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private DataSource dataSource;
-	
-	@Autowired
-	private UserDetailsService userDetailsService;
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -68,7 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resource/**");
+		web.ignoring().antMatchers("/statics/**", "/templates/**");
 	}
 
 	@Override
@@ -77,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().csrf().disable().anonymous()
 			.and()
 				.authorizeRequests()
-				.antMatchers("/**", "/statics/**", "/signup", "/console/**")
+				.antMatchers("/login", "/signup", "/console/**")
 				.permitAll().anyRequest().authenticated()
 			.and()
 				.formLogin()
@@ -92,16 +85,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.invalidateHttpSession(true)
 				.deleteCookies("JSESSIONID");
 	}
-	
-	@Bean
-	public SocialUserDetailsService socialUsersDetailService() {
-		return new SocialUsersDetailService(userDetailsService);
-	}
-
-	@Override
-	protected UserDetailsService userDetailsService() {
-		return userDetailsService;
-	}
-	
-	
 }
