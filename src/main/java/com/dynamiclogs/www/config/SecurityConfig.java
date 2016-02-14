@@ -15,11 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * 
  * 시큐리티 설정 클래스입니다.
- * (TODO 작성필요)
- * https://github.com/brant-hwang/spring-boot-social-example/blob/master/src/main/java/com/axisj/examples/spring/social/SecurityConfig.java
- * https://github.com/callistaenterprise/blog-social-login-with-spring-social
- * 
- * com.dynamiclogs.www.config SecurityConfig.java
  *
  * @author : quickmenu
  * @date : 2016. 1. 24.
@@ -70,18 +65,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().csrf().disable().anonymous()
 			.and()
 				.authorizeRequests()
-				.antMatchers("/login", "/signup", "/console/**")
+				.antMatchers("/signin", "/signup", "/console/**")
 				.permitAll().anyRequest().authenticated()
 			.and()
 				.formLogin()
-				.loginPage("/login")
+				.loginPage("/signin")
 				.loginProcessingUrl("/login/process")
 				.defaultSuccessUrl("/")
 				.permitAll()
 			.and()
 				.logout()
-				.logoutUrl("/logout")
-				.logoutSuccessUrl("/login")
+				.logoutUrl("/signout")
+				.logoutSuccessUrl("/signin")
 				.invalidateHttpSession(true)
 				.deleteCookies("JSESSIONID");
 	}
